@@ -1,0 +1,14 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body op zwart */
+body {
+  background-color: black;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  height: 100vh;
+}

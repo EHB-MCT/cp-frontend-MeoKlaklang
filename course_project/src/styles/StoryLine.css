@@ -1,0 +1,13 @@
+/* src/styles/StoryLine.css */
+.storyline {
+    position: absolute;
+    top: 0;
+    bottom: -40vh;
+    left: 50%;
+    width: 4px;
+    background: gold;
+    transform-origin: top center; /* groeit vanaf de top */
+    z-index: 0;
+    pointer-events: none;
+  }
+  

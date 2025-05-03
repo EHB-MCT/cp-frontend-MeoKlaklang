@@ -1,0 +1,39 @@
+/* FrogLilySection.css */
+.frog-lily-wrapper {
+	bottom: 50vh;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden; /* of visible als je wilt dat de bladeren nóg verder uitsteken */
+}
+
+.lily {
+	position: absolute;
+	bottom: 10vh;
+	width: 50vw;
+	user-select: none;
+	pointer-events: all; /* zodat drag events werken */
+}
+
+.lily.back {
+	left: 60%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.lily.front {
+	left: 40%;
+	transform: translateX(-50%);
+	z-index: 3;
+}
+
+.frog {
+	position: absolute;
+	bottom: 20vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 30vw;
+	z-index: 2;
+	user-select: none;
+	pointer-events: none;
+}

@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+
+/* Wrapper rond beide secties, zodat de bloem buiten .hero mag uitsteken */
+.hero-wrapper {
+	position: relative;
+	overflow: visible;
+	padding-bottom: 200vh;
+
+}
+/* BLOEM helemaal bovenaan */
+.flower {
+	position: absolute;
+	left: 63%;
+	bottom: 260vh;
+	transform: translateX(-50%);
+	height: 160vh;
+	user-select: none;
+	pointer-events: none;
+	z-index: 3;
+}
+
+
+/* HERO-SECTIE */
+.hero {
+	position: relative;
+	width: 100%;
+	height: 160vh; /* genoeg scrollruimte */
+	background: black;
+
+}
+
+.hero .title {
+	position: absolute;
+	top: 30%;
+	left: 25%;
+	transform: translateX(-50%);
+	font-size: 10rem;
+	font-family: "Stalemate", cursive;
+	font-weight: 400;
+	font-style: normal;
+	color: gold;
+	pointer-events: none;
+	will-change: transform, opacity;
+}
+
+/* Flower-effects binnen de hero */
+.hero .flower-effects {
+	position: absolute;
+	left: 63%;
+	bottom: 75vh;
+	height: 90vh;
+	pointer-events: none; /* we luisteren op window, dus geen clicks nodig */
+	z-index: 7;
+	will-change: transform;
+}
+
+
+/* REVEAL-SECTIE MET OVERLAP */
+.reveal {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	margin-top: -40vh;
+	background: transparent;
+	/* overflow: visible;  niet nodig zolang de wrapper dat al is */
+	
+}
+
+/* Gras (laag 1) */
+.reveal .grass {
+	position: absolute;
+	bottom: 30vh;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 60vh;
+	width: auto;
+	z-index: 1;
+}
+
+/* Fee (laag 2) */
+.reveal .fairy {
+	position: absolute;
+	bottom: 30vh; /* precies op de bovenkant van je gras */
+	left: 30%;
+	transform: translateX(-50%) scaleX(-1);
+	height: 95vh;
+	width: auto;
+	pointer-events: none;
+	z-index: 2;
+}

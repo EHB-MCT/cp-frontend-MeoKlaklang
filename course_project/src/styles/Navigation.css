@@ -1,0 +1,43 @@
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 82px;
+	border-bottom: 1px solid #fff;
+	background-color: #fff;
+	font-family: sans-serif;
+}
+
+.logo {
+	height: 150px;
+}
+
+.nav-left {
+	margin-left: 200px;
+}
+.nav-right {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+	margin-right: 200px;
+}
+
+.nav-right a {
+	text-decoration: none;
+	color: #222;
+	font-weight: 400;
+	transition: color 0.2s;
+}
+
+.nav-right a:hover,
+.nav-right a.active {
+	font-weight: 600;
+	color: black;
+}
+
+.search-button {
+	background: none;
+	border: none;
+	font-size: 1.2rem;
+	cursor: pointer;
+}

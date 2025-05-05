@@ -1,14 +1,15 @@
-// src/App.jsx
 import React from "react";
-import "./styles/App.css";
-import Hero from "./components/Hero";
-import FrogLilySection from "./components/FrogLillySection";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Portal from "./pages/Portal"; // moet je nog aanmaken
+import Duimelijntje from "./pages/Duimelijntje"; // jouw huidige verhaal
 
 export default function App() {
-	return (
-		<div className="app">
-			<Hero />
-			<FrogLilySection />
-		</div>
-	);
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portal />} />
+        <Route path="/duimelijntje" element={<Duimelijntje />} />
+      </Routes>
+    </Router>
+  );
 }

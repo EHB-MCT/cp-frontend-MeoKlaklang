@@ -1,0 +1,44 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel-grid {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .arrow {
+    background: transparent;
+    border: none;           /* geen ronde border meer */
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  .arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  
+  .arrow svg {
+    color: #e51131;         /* rode kleur */
+    transition: color 0.2s;
+  }
+  
+  .arrow:not(:disabled):hover svg {
+    color: #555;            /* donkerder op hover */
+  }
+  
+  /* optioneel: wat extra ruimte tussen pijlen en kaarten */
+  .arrow-left {
+    margin-right: 2rem;
+  }
+  
+  .arrow-right {
+    margin-left: 2rem;
+  }
+  

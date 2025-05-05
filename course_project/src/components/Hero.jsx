@@ -14,6 +14,9 @@ import "../styles/Hero.css";
 import StoryBox from "./StoryBox";
 import StoryLine from "./StoryLine";
 
+import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+
 export default function Hero() {
 	const blink = useBlink(3000, 200);
 	const offset = useMouseOffset(30);
@@ -24,8 +27,13 @@ export default function Hero() {
 	const storyY = useTransform(scrollY, [2000, 2500], [50, 0]);
 	const storyOpacity = useTransform(scrollY, [1200, 1300], [0, 1]);
 
+	const navigate = useNavigate();
+
 	return (
 		<div className="hero-wrapper">
+			<button className="circle-back-button" onClick={() => navigate("/")}>
+				←
+			</button>
 			<StoryLine />
 
 			<section className="hero">

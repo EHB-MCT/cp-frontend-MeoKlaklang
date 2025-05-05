@@ -1,0 +1,89 @@
+.portal {
+	padding: 2rem;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #fff;
+	min-height: 100vh;
+}
+
+.wrapper {
+	max-width: 1700px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.portal-title {
+	text-align: left;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	color: #e51131;
+	margin-left: 180px;
+}
+
+.card-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7rem;
+	justify-content: center;
+}
+
+/* Nieuwe stijl voor SprookjeCard component */
+.card {
+	background-color: #ebf5ec;
+	width: 550px;
+	height: 420px;
+	padding: 2rem;
+	border-radius: 16px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.card-link {
+	margin-top: auto; /* duwt de pijl naar onder */
+	align-self: flex-end; /* rechts uitlijnen */
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.card-link svg {
+	color: #666666; /* lichtgrijs */
+	width: 2rem; /* gewenste breedte */
+	height: 2rem; /* gewenste hoogte */
+}
+
+.card-link svg:hover {
+	color: #e51131; /* iets donkerder op hover */
+}
+.card:hover {
+	transform: scale(1.05);
+}
+
+.card h2 {
+	margin: 0.5rem 0 0.2rem;
+	font-size: 1.2rem;
+	color: #333;
+}
+
+.card p {
+	margin: 0;
+	font-size: 0.9rem;
+	color: #666;
+}
+
+.card a {
+	margin-top: auto;
+	font-size: 0.9rem;
+	color: #e51131;
+	text-decoration: underline;
+}
+
+.card img {
+	width: 100%; /* vult de breedte van de kaart */
+	height: 260px; /* vaste hoogte voor alle afbeeldingen */
+	object-fit: cover; /* bijsnijden om te vullen zonder vervorming */
+	border-radius: 12px;
+	margin-bottom: 0.5rem;
+}

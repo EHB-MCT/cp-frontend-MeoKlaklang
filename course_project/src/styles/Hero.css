@@ -5,7 +5,6 @@
 	position: relative;
 	overflow: visible;
 	padding-bottom: 200vh;
-
 }
 /* BLOEM helemaal bovenaan */
 .flower {
@@ -19,14 +18,12 @@
 	z-index: 3;
 }
 
-
 /* HERO-SECTIE */
 .hero {
 	position: relative;
 	width: 100%;
 	height: 160vh; /* genoeg scrollruimte */
-	background: black;
-
+	background: rgb(0, 0, 0);
 }
 
 .hero .title {
@@ -54,7 +51,6 @@
 	will-change: transform;
 }
 
-
 /* REVEAL-SECTIE MET OVERLAP */
 .reveal {
 	position: relative;
@@ -63,7 +59,6 @@
 	margin-top: -40vh;
 	background: transparent;
 	/* overflow: visible;  niet nodig zolang de wrapper dat al is */
-	
 }
 
 /* Gras (laag 1) */
@@ -87,4 +82,26 @@
 	width: auto;
 	pointer-events: none;
 	z-index: 2;
+}
+
+.circle-back-button {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 48px;
+	height: 48px;
+	background-color: white;
+	border: none;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	z-index: 1000;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.circle-back-button:hover {
+	background-color: #f0f0f0;
+	transform: scale(1.05);
 }

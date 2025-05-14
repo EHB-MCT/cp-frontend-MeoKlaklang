@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SprookjeCard from "../components/SprookjeCard";
+import SprookjeCard from "../componentsHome/SprookjeCard";
 import "../styles/Carousel.css";
 
 import { MdOutlineArrowCircleLeft, MdOutlineArrowCircleRight } from "react-icons/md";

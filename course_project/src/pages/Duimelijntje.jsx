@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "../components/Hero";
-import FrogLilySection from "../components/FrogLillySection";
+import Hero from "../componentsHome/Hero";
+import FrogLilySection from "../componentsHome/FrogLillySection";
 
 
 export default function Duimelijntje() {

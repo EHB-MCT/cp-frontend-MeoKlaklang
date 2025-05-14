@@ -8,7 +8,7 @@
   
   .carousel-grid {
     display: flex;
-    gap: 3rem;
+    gap: 6rem;
   }
   
   .arrow {
@@ -27,6 +27,8 @@
   .arrow svg {
     color: #e51131;         /* rode kleur */
     transition: color 0.2s;
+    width: 4rem;     /* pas aan naar gewenste grootte */
+    height: 4rem;    /* idem */
   }
   
   .arrow:not(:disabled):hover svg {
@@ -35,10 +37,10 @@
   
   /* optioneel: wat extra ruimte tussen pijlen en kaarten */
   .arrow-left {
-    margin-right: 2rem;
+    margin-right:6rem;
   }
   
   .arrow-right {
-    margin-left: 2rem;
+    margin-left: 6rem;
   }
   

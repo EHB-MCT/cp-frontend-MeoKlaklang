@@ -1,0 +1,10 @@
+.all-stories-grid {
+  margin-left: 150px;
+  margin-right:90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+

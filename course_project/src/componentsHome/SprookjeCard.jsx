@@ -10,7 +10,6 @@ function SprookjeCard({ title, author, genre, image, link }) {
 			<p>{genre}</p>
 			<a href={link} className="card-link" aria-label={`Bekijk ${title}`}>
 				<IoIosArrowRoundForward />
-				{/* hier het icoon */}
 			</a>
 		</div>
 	);

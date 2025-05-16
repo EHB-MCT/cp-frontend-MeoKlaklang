@@ -10,7 +10,7 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<Portal />} />
 				<Route path="/duimelijntje" element={<Duimelijntje />} />
-				<Route path="/MakingOf" element={<MakingOf />} />
+				<Route path="/making-of/:id" element={<MakingOf />} />
 			</Routes>
 		</Router>
 	);

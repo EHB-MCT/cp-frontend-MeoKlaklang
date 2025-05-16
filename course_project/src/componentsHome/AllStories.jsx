@@ -20,7 +20,14 @@ export default function AllStories({ dataUrl }) {
 		<div className="all-stories">
 			<div className="all-stories-grid">
 				{items.map((story, index) => (
-					<MiniSprookjeCard key={index} title={story.title} author={story.student} genre={story.genre} image={story.image} link={story.link} />
+					<MiniSprookjeCard
+						key={index}
+						id={story.id}
+						title={story.title}
+						author={story.student}
+						genre={story.genre}
+						image={story.image}
+					/>
 				))}
 			</div>
 		</div>

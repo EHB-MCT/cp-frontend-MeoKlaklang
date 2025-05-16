@@ -1,8 +1,8 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import "../styles/MiniSprookjeCard.css";
 
-export default function MiniSprookjeCard({ title, author, genre, image, link }) {
+export default function MiniSprookjeCard({ id, title, author, genre, image }) {
   return (
     <div className="mini-card">
       <img src={image} alt={title} className="mini-card-image" />
@@ -11,9 +11,13 @@ export default function MiniSprookjeCard({ title, author, genre, image, link }) 
         <p className="mini-card-title">{title}</p>
         <p className="mini-card-genre">{genre}</p>
       </div>
-      <a href={link} className="mini-card-link" aria-label={`Bekijk ${title}`}>
+      <Link
+        to={`/making-of/${id}`}
+        className="mini-card-link"
+        aria-label={`Bekijk ${title}`}
+      >
         <IoIosArrowRoundForward />
-      </a>
+      </Link>
     </div>
   );
 }

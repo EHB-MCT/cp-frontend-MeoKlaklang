@@ -18,7 +18,7 @@ export default function Navigation() {
 					SPROOKJES
 				</a>
 				<a href="/MakingOf">MAKING OF</a>
-				<a href="#">ABOUT US</a>
+				<a href="/AboutUs">ABOUT US</a>
 				<button className="search-button">🔍</button>
 			</div>
 		</nav>

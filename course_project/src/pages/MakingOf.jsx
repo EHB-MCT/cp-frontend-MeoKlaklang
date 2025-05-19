@@ -3,10 +3,15 @@ import { useParams } from "react-router-dom";
 import "../styles/MakingOf.css";
 import Navigation from "../componentsHome/Navigation";
 import Footer from "../componentsHome/footer";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { LiaEyeSolid } from "react-icons/lia";
 
 export default function MakingOf() {
 	const { id } = useParams();
 	const [story, setStory] = useState(null);
+	const [showFullText, setShowFullText] = useState(false);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		fetch("/data.json")
@@ -39,25 +44,55 @@ export default function MakingOf() {
 					</div>
 				</div>
 
-				{/* NIEUW TOEGEVOEGDE CONTEXT */}
 				<div className="story-content">
-					<div className="story-text">
+					<div className={`story-text ${showFullText ? "full" : ""}`}>
 						<h2>Verhaal</h2>
-						<p>{story.text}</p>
+						<p
+							dangerouslySetInnerHTML={{
+								__html: showFullText ? story["full-text"] : story.text,
+							}}
+						/>
+
+						{showFullText && (
+							<>
+								<h3>Parallax effect</h3>
+								<p
+									dangerouslySetInnerHTML={{
+										__html: story["parallax-text"],
+									}}
+								/>
+							</>
+						)}
 
 						<h3>Auteur</h3>
 						<p>{story.auteur}</p>
 						<p>{story.genre}</p>
 
-						<button className="lees-meer">Lees meer</button>
+						<button className="lees-meer" onClick={() => setShowFullText(!showFullText)}>
+							{showFullText ? "Lees minder" : "Lees meer"}
+						</button>
 					</div>
 
-					<div className="story-image">
-						<img src={story.foto2} alt="Illustratie" />
-						<a href={story.website} target="_blank" rel="noopener noreferrer">
-							👁️ View Website
-						</a>
+					{!showFullText && (
+						<div className="story-image">
+							<img src={story.foto2} alt="Illustratie" />
+							<button className="view-website-button" onClick={() => navigate(story.link, { state: { id: story.id } })}>
+								<LiaEyeSolid size={24} />
+								View Story
+							</button>
+						</div>
+					)}
+				</div>
+				<div className="extra-info">
+					<h2 className="extra-title">EXTRA INFORMATIE</h2>
+
+					<div className="extra-images">
+						<img src={story.foto3} alt="Illustratie 1" />
+						<img src={story.foto4} alt="Illustratie 2" />
+						<img src={story.foto5} alt="Illustratie 3" />
 					</div>
+
+					<p className="extra-description">{story["extra-text"]}</p>
 				</div>
 			</div>
 

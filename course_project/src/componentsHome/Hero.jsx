@@ -14,7 +14,7 @@ import "../styles/Hero.css";
 import StoryBox from "./StoryBox";
 import StoryLine from "./StoryLine";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 export default function Hero() {
@@ -23,36 +23,59 @@ export default function Hero() {
 	const { scrollY } = useViewportScroll();
 	const titleY = useTransform(scrollY, [0, 400], [0, -80]);
 	const titleOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-
 	const storyY = useTransform(scrollY, [2000, 2500], [50, 0]);
 	const storyOpacity = useTransform(scrollY, [1200, 1300], [0, 1]);
 
 	const navigate = useNavigate();
+	const location = useLocation();
+	const id = location.state?.id ?? "1"; // fallback naar id=1 als er niets meegegeven is
 
 	return (
 		<div className="hero-wrapper">
-			<button className="circle-back-button" onClick={() => navigate("/")}>
+			<button
+				className="circle-back-button"
+				onClick={() => navigate(`/making-of/${id}`)}
+			>
 				←
 			</button>
+
 			<StoryLine />
 
 			<section className="hero">
-				<motion.h1 style={{ y: titleY, opacity: titleOpacity }} className="title">
+				<motion.h1
+					style={{ y: titleY, opacity: titleOpacity }}
+					className="title"
+				>
 					Duimelijntje
 				</motion.h1>
-				<img src={effects} alt="flower effects" className="flower-effects" style={{ transform: `translateX(calc(-50% + ${offset.x}px)) translateY(${offset.y}px)` }} />
+				<img
+					src={effects}
+					alt="flower effects"
+					className="flower-effects"
+					style={{
+						transform: `translateX(calc(-50% + ${offset.x}px)) translateY(${offset.y}px)`,
+					}}
+				/>
 			</section>
 
 			<section className="reveal">
 				<img src={grass} alt="gras" className="grass" />
-				<img src={blink ? fairyCloseEyes : fairyOpen} alt="fee knippert met ogen" className="fairy" />
+				<img
+					src={blink ? fairyCloseEyes : fairyOpen}
+					alt="fee knippert met ogen"
+					className="fairy"
+				/>
 			</section>
 
 			<img src={flower} alt="bloem" className="flower" />
 
 			<motion.div style={{ y: storyY, opacity: storyOpacity }}>
 				<StoryBox>
-					<p className="story-text">Er was eens een klein meisje genaamd Duimelijntje. Ze werd in de gaten gehouden door de padkoning omdat hij een prinses zocht voor zijn zoon.</p>
+					<p className="story-text">
+						Er was eens een klein meisje genaamd Duimelijntje. Ze werd in de
+						gaten gehouden door de padkoning omdat hij een prinses zocht voor
+						zijn zoon.
+					</p>
 					<span />
 				</StoryBox>
 			</motion.div>

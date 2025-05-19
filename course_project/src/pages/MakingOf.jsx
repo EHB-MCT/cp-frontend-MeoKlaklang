@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import "../styles/MakingOf.css";
 import Navigation from "../componentsHome/Navigation";
 import Footer from "../componentsHome/footer";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { LiaEyeSolid } from "react-icons/lia";
+import Banner from "../componentsMakingOf/Banner";
+import StoryText from "../componentsMakingOf/StoryText";
+import StoryImage from "../componentsMakingOf/StoryImage";
+import ExtraInfo from "../componentsMakingOf/ExtraInfo";
 
 export default function MakingOf() {
 	const { id } = useParams();
 	const [story, setStory] = useState(null);
 	const [showFullText, setShowFullText] = useState(false);
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		fetch("/data.json")
@@ -32,68 +32,15 @@ export default function MakingOf() {
 			<div className="making-of-wrapper">
 				<h1 className="banner-title">Making Of</h1>
 
-				<div
-					className="banner"
-					style={{
-						backgroundImage: `url(${story.foto1})`,
-					}}
-				>
-					<div className="banner-content">
-						<h1 className="banner-title">{story.title}</h1>
-						<p className="banner-author">{story.student}</p>
-					</div>
-				</div>
+				<Banner foto={story.foto1} title={story.title} student={story.student} />
 
 				<div className="story-content">
-					<div className={`story-text ${showFullText ? "full" : ""}`}>
-						<h2>Verhaal</h2>
-						<p
-							dangerouslySetInnerHTML={{
-								__html: showFullText ? story["full-text"] : story.text,
-							}}
-						/>
+					<StoryText story={story} showFullText={showFullText} toggleShowFullText={() => setShowFullText(!showFullText)} />
 
-						{showFullText && (
-							<>
-								<h3>Parallax effect</h3>
-								<p
-									dangerouslySetInnerHTML={{
-										__html: story["parallax-text"],
-									}}
-								/>
-							</>
-						)}
-
-						<h3>Auteur</h3>
-						<p>{story.auteur}</p>
-						<p>{story.genre}</p>
-
-						<button className="lees-meer" onClick={() => setShowFullText(!showFullText)}>
-							{showFullText ? "Lees minder" : "Lees meer"}
-						</button>
-					</div>
-
-					{!showFullText && (
-						<div className="story-image">
-							<img src={story.foto2} alt="Illustratie" />
-							<button className="view-website-button" onClick={() => navigate(story.link, { state: { id: story.id } })}>
-								<LiaEyeSolid size={24} />
-								View Story
-							</button>
-						</div>
-					)}
+					{!showFullText && <StoryImage foto={story.foto2} link={story.link} id={story.id} />}
 				</div>
-				<div className="extra-info">
-					<h2 className="extra-title">EXTRA INFORMATIE</h2>
 
-					<div className="extra-images">
-						<img src={story.foto3} alt="Illustratie 1" />
-						<img src={story.foto4} alt="Illustratie 2" />
-						<img src={story.foto5} alt="Illustratie 3" />
-					</div>
-
-					<p className="extra-description">{story["extra-text"]}</p>
-				</div>
+				<ExtraInfo story={story} />
 			</div>
 
 			<Footer />

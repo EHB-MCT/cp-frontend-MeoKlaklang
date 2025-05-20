@@ -53,9 +53,24 @@ export default function Navigation() {
 							)}
 						</div>
 
-						<Link to="/MakingOf" className={location.pathname === "/MakingOf" ? "active" : ""}>
+						<span
+							onClick={() => {
+								fetch("/data.json")
+									.then((res) => res.json())
+									.then((data) => {
+										if (data.length > 0) {
+											const randomIndex = Math.floor(Math.random() * data.length);
+											const randomStory = data[randomIndex];
+											navigate(`/making-Of/${randomStory.id}`);
+										}
+									})
+									.catch((err) => console.error("Fout bij ophalen random verhaal:", err));
+							}}
+							className={location.pathname.startsWith("/MakingOf") ? "active clickable" : "clickable"}
+						>
 							MAKING OF
-						</Link>
+						</span>
+
 						<Link to="/AboutUs" className={location.pathname === "/AboutUs" ? "active" : ""}>
 							ABOUT US
 						</Link>

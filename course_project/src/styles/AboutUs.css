@@ -1,46 +1,79 @@
-.about-section {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap: wrap;
+.wrapper-aboutUs {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 2rem 0; /* ← geen horizontale padding */
 }
 
 .about-wrapper {
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	align-items: flex-start;
 	max-width: 1100px;
 	margin: 0 auto;
 }
+
 .about-text {
-	flex: 1;
-	max-width: 500px;
+	padding-top: 60px;
+	max-width: 500px; /* ← ruimer maken */
 }
 
-.about-text h2 {
+.about-title {
+	font-size: 2rem;
 	color: #d00000;
-	font-size: 1.8rem;
 	font-weight: bold;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 
 .about-text p {
-	font-size: 1rem;
-	color: #333;
-	line-height: 1.7;
-	margin-bottom: 2rem;
+	color: #444;
+	margin-bottom: 1rem;
+	line-height: 1.6;
 }
 
 .about-button {
-	background-color: black;
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.75rem 1.5rem;
+	background: black;
 	color: white;
-	border: none;
-	padding: 0.9rem 2rem;
 	border-radius: 999px;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+	text-decoration: none;
+	font-weight: bold;
 }
 
-.about-button:hover {
-	background-color: #333;
+.photo-tiles {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	flex: 1 1 50%;
 }
 
+.photo-tiles .tile img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 1.5rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.photo-tiles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: flex-start;
+}
+
+.photo-tiles .tile {
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-tiles .tile img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 4px; /* voor strakkere, meer hoekige look */
+}

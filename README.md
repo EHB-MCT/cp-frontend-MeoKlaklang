@@ -3,3 +3,5 @@
 
 
 br in json file: https://legacy.reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml 
+
+carousel; https://react-bootstrap.netlify.app/docs/components/carousel/ 

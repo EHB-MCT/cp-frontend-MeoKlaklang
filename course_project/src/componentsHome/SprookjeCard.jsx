@@ -1,16 +1,17 @@
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-function SprookjeCard({ title, author, genre, image, link }) {
+function SprookjeCard({ id, title, author, genre, image }) {
 	return (
-		<div className="card">
+		<div className="carousel-card">
 			<img src={image} alt={title} />
-			<h2>{title}</h2>
-			<p>door {author}</p>
+			<h4>{author}</h4>
+			<p>{title}</p>
 			<p>{genre}</p>
-			<a href={link} className="card-link" aria-label={`Bekijk ${title}`}>
-				<IoIosArrowRoundForward />
-			</a>
+			<Link to={`/making-of/${id}`} aria-label={`Bekijk ${title}`}>
+				<IoIosArrowRoundForward className="card-arrow" />
+			</Link>
 		</div>
 	);
 }

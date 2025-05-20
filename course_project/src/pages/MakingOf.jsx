@@ -14,6 +14,14 @@ export default function MakingOf() {
 	const [showFullText, setShowFullText] = useState(false);
 
 	useEffect(() => {
+		if (story) {
+			const views = JSON.parse(localStorage.getItem("views")) || {};
+			views[story.id] = (views[story.id] || 0) + 1;
+			localStorage.setItem("views", JSON.stringify(views));
+		}
+	}, [story]);
+
+	useEffect(() => {
 		fetch("/data.json")
 			.then((res) => res.json())
 			.then((data) => {

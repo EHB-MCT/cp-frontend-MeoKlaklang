@@ -1,46 +1,96 @@
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .carousel-grid {
-    display: flex;
-    gap: 6rem;
-  }
-  
-  .arrow {
-    background: transparent;
-    border: none;           /* geen ronde border meer */
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-  }
-  
-  .arrow:disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
-  
-  .arrow svg {
-    color: #e51131;         /* rode kleur */
-    transition: color 0.2s;
-    width: 4rem;     /* pas aan naar gewenste grootte */
-    height: 4rem;    /* idem */
-  }
-  
-  .arrow:not(:disabled):hover svg {
-    color: #555;            /* donkerder op hover */
-  }
-  
-  /* optioneel: wat extra ruimte tussen pijlen en kaarten */
-  .arrow-left {
-    margin-right:6rem;
-  }
-  
-  .arrow-right {
-    margin-left: 6rem;
-  }
-  
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	margin: 2rem auto;
+	width: 100%;
+}
+
+.carousel-grid {
+	width: 1100px;
+	height: 500px;
+	display: flex;
+	align-items: center; /* ✅ centreert cards verticaal */
+	gap: 2.5rem;
+}
+
+/* Pijlen links/rechts */
+.arrow {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 0;
+}
+
+.arrow svg {
+	color: #e51131;
+	width: 2.5rem;
+	height: 2.5rem;
+	transition: color 0.2s ease;
+}
+
+.arrow:hover svg {
+	color: #a8001d;
+}
+
+/* De carousel card */
+.carousel-card {
+	background-color: #ebf5ec;
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+
+	width: 570px; /* blijf zoals je wilde */
+	height: 420px; /* idem */
+}
+
+.carousel-card:hover {
+	transform: scale(1.03);
+}
+
+/* Afbeelding */
+.carousel-card img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 12px;
+	margin-bottom: 0.75rem;
+}
+
+/* Tekst */
+.carousel-card h4 {
+	margin: 0.25rem 0 0.2rem;
+	font-size: 0.95rem;
+	color: #333;
+	font-weight: bold;
+}
+
+.carousel-card p {
+	margin: 0;
+	font-size: 0.75rem;
+	color: #666;
+}
+
+/* Pijl rechtsonder */
+.carousel-card .card-arrow {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	font-size: 1.8rem;
+	color: #666;
+	transition: color 0.2s ease;
+}
+
+.carousel-card .card-arrow:hover {
+	color: #e51131;
+}

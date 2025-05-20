@@ -1,11 +1,9 @@
 .nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 16px 82px;
-	border-bottom: 1px solid #fff;
-	background-color: #fff;
-	font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
 }
 
 .logo {
@@ -23,16 +21,17 @@
 }
 
 .nav-right a {
+	color: #999;
 	text-decoration: none;
-	color: #222;
-	font-weight: 400;
-	transition: color 0.2s;
+	font-weight: normal;
+	margin-left: 1.5rem;
+	transition: color 0.2s ease;
 }
 
 .nav-right a:hover,
 .nav-right a.active {
-	font-weight: 600;
-	color: black;
+	color: #000; /* zwarte kleur voor actieve link */
+	font-weight: bold;
 }
 
 .search-button {
@@ -41,3 +40,59 @@
 	font-size: 1.2rem;
 	cursor: pointer;
 }
+
+.search-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.search-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin-left: 0.75rem;
+	display: flex;
+	align-items: center;
+	color: black;
+}
+
+.search-input {
+	padding: 0.6rem 1.2rem;
+	border: none;
+	border-radius: 999px;
+	background-color: #f0f0f0;
+	font-size: 1rem;
+	outline: none;
+	width: 220px;
+	transition: all 0.3s ease;
+}
+
+.nav-item-wrapper {
+	position: relative;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.dropdown {
+	position: absolute;
+	top: 2.5rem;
+	left: 0;
+	z-index: 1000;
+}
+
+.dropdown-item {
+	font-size: 0.9rem;
+	color: #111;
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+}
+
+
+.dropdown-item:hover {
+	color: #d00000;
+}
+

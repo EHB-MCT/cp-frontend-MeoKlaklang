@@ -55,7 +55,7 @@ export default function Navigation() {
 
 						<span
 							onClick={() => {
-								fetch("/data.json")
+								fetch(`${import.meta.env.BASE_URL}data.json`)
 									.then((res) => res.json())
 									.then((data) => {
 										if (data.length > 0) {

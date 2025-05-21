@@ -16,7 +16,7 @@ export default function AboutUs() {
 					<AboutText />
 					<PhotoTiles />
 				</div>
-				<PopularCarousel dataUrl="/data.json" />
+				<PopularCarousel dataUrl={`${import.meta.env.BASE_URL}data.json`} />
 			</div>
 			<Footer />
 		</>

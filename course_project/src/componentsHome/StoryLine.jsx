@@ -1,4 +1,4 @@
-// src/components/StoryLine.jsx
+// src/componentsHome/StoryLine.jsx
 import React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import "../styles/StoryLine.css";

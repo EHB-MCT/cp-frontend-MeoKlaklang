@@ -1,10 +1,9 @@
 /* FrogLilySection.css */
 .frog-lily-wrapper {
-	bottom: 50vh;
 	position: relative;
 	width: 100%;
-	height: 100vh;
-	overflow: hidden; /* of visible als je wilt dat de bladeren nóg verder uitsteken */
+	height: 50vh;
+	overflow: visible; /* 🔄 GEWIJZIGD */
 }
 
 .lily {
@@ -12,7 +11,7 @@
 	bottom: 10vh;
 	width: 50vw;
 	user-select: none;
-	pointer-events: all; 
+	pointer-events: all;
 }
 
 .lily.back {
@@ -36,4 +35,18 @@
 	z-index: 2;
 	user-select: none;
 	pointer-events: none;
+}
+
+.story-container {
+	padding-top: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100px;
+	z-index: 5;
+	position: relative;
+}
+
+.frog-lily-page {
+	min-height: 200vh; /* zodat scrollY ver genoeg kan komen */
 }

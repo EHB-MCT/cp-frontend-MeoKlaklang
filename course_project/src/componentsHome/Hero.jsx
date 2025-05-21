@@ -1,3 +1,4 @@
+// src/componentsHome/Hero.jsx
 import React from "react";
 import { useBlink } from "../hooks/useBlink";
 import { useMouseOffset } from "../hooks/useMouseOffset";
@@ -12,10 +13,7 @@ import fairyCloseEyes from "../assets/fairyCloseEyes.png";
 import "../styles/Hero.css";
 
 import StoryBox from "./StoryBox";
-import StoryLine from "./StoryLine";
-
 import { useNavigate, useLocation } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
 
 export default function Hero() {
 	const blink = useBlink(3000, 200);
@@ -28,7 +26,7 @@ export default function Hero() {
 
 	const navigate = useNavigate();
 	const location = useLocation();
-	const id = location.state?.id ?? "1"; 
+	const id = location.state?.id ?? "1";
 
 	return (
 		<div className="hero-wrapper">
@@ -38,8 +36,6 @@ export default function Hero() {
 			>
 				←
 			</button>
-
-			<StoryLine />
 
 			<section className="hero">
 				<motion.h1

@@ -1,16 +1,18 @@
 import React from "react";
 import Hero from "../componentsHome/Hero";
-import FrogLilySection from "../componentsHome/FrogLillySection";
-import StoryLine from "../componentsHome/StoryLine";
+import FrogLillySection from "../componentsHome/FrogLillySection";
 import SceneDrie from "../componentsHome/SceneDrie";
+import SceneVier from "../componentsHome/SceneVier";
+import StoryLine from "../componentsHome/StoryLine";
 
 export default function Duimelijntje() {
 	return (
-		<div className="app">
-			<StoryLine />
+		<div className="duimelijntje-page" style={{ position: "relative" }}>
+			<StoryLine /> {/* ⬅️ zet hem HIER */}
 			<Hero />
-			<FrogLilySection />
+			<FrogLillySection />
 			<SceneDrie />
+			<SceneVier />
 		</div>
 	);
 }

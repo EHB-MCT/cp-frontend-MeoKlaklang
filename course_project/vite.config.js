@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/cp-frontend-MeoKlaklang/', // ← LET OP: begint én eindigt met /
+  base: '/cp-frontend-MeoKlaklang/',
 })

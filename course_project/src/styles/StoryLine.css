@@ -1,12 +1,13 @@
+/* src/styles/StoryLine.css */
 .storyline {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100vh;
-  background-color: red; /* opvallend maken */
-  transform-origin: top;
-  z-index: -1; /* lager dan alles */
-  pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 2px;
+	height: 100%;
+	transform-origin: top;
+	background-color: gold;
+	transform: translateX(-50%);
+	z-index: 0;
+	pointer-events: none;
 }

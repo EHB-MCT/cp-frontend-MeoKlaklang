@@ -10,6 +10,7 @@ import vis from "../assets/vis.png";
 import vis1 from "../assets/vis2.png";
 import boing from "../assets/boing.mp3";
 import dust from "../assets/dust.png"; // voeg je stofwolk-afbeelding toe
+import StoryBox from "./StoryBox"; // ✅ pas aan indien pad anders is
 
 import "../styles/SceneDrie.css";
 
@@ -39,83 +40,73 @@ export default function SceneDrie() {
 				alt="kikker met hoed"
 				className="frog2"
 				onClick={handleFrogClick}
-				animate={
-					frogShouldFly
-						? { x: 300, y: -300, opacity: 0, rotate: 360 }
-						: { x: 0, y: 0, opacity: 1, rotate: 0 }
-				}
+				animate={frogShouldFly ? { x: 300, y: -300, opacity: 0, rotate: 360 } : { x: 0, y: 0, opacity: 1, rotate: 0 }}
 				transition={{ duration: 1, ease: "easeInOut" }}
 			/>
 
 			{/* Fairy met hover-vlinders */}
-			<img
-				src={fairy}
-				alt="vleugelmeisje"
-				className="fairy-scene-drie"
-				onMouseEnter={() => setHovered(true)}
-				onMouseLeave={() => setHovered(false)}
-			/>
+			<img src={fairy} alt="vleugelmeisje" className="fairy-scene-drie" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} />
 
-			{hovered && (
-				<>
-					<motion.img
-						src={vlinder}
-						alt="vlinder"
-						className="vlinder"
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: [-20, 0, -20] }}
-						transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-					/>
-					<motion.img
-						src={vlinder1}
-						alt="vlinder1"
-						className="vlinder1"
-						initial={{ opacity: 0, x: 20 }}
-						animate={{ opacity: 1, x: [20, -10, 20] }}
-						transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-					/>
-					{/* extra vlinders rondom */}
-					<motion.img
-						src={vlinder}
-						alt="vlinder-rechts-1"
-						className="vlinder"
-						style={{ top: "42%", left: "72%" }}
-						initial={{ opacity: 0, y: -10 }}
-						animate={{ opacity: 1, y: [-10, 0, -10] }}
-						transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-					/>
-					<motion.img
-						src={vlinder1}
-						alt="vlinder-rechts-2"
-						className="vlinder"
-						style={{ top: "50%", left: "70%" }}
-						initial={{ opacity: 0, x: 10 }}
-						animate={{ opacity: 1, x: [10, 0, 10] }}
-						transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-					/>
-					<motion.img
-						src={vlinder}
-						alt="vlinder-rechts-3"
-						className="vlinder"
-						style={{ top: "38%", left: "74%" }}
-						initial={{ opacity: 0, y: 10 }}
-						animate={{ opacity: 1, y: [10, 0, 10] }}
-						transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-					/>
-				</>
-			)}
+{hovered && (
+	<>
+		{/* Originele twee */}
+		<motion.img
+			src={vlinder}
+			alt="vlinder"
+			className="vlinder"
+			style={{ top: "-0%", left: "70%" }}
+			initial={{ opacity: 0, y: -20 }}
+			animate={{ opacity: 1, y: [-20, 0, -20] }}
+			transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+		/>
+		<motion.img
+			src={vlinder1}
+			alt="vlinder1"
+			className="vlinder1"
+			style={{ top: "-5%", left: "65%" }}
+			initial={{ opacity: 0, x: 20 }}
+			animate={{ opacity: 1, x: [20, -10, 20] }}
+			transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+		/>
+
+		{/* Nieuwe extra vlinders */}
+		<motion.img
+			src={vlinder}
+			alt="vlinder-extra-1"
+			className="vlinder"
+			style={{ top: "5%", left: "65%" }}
+			initial={{ opacity: 0, y: 10 }}
+			animate={{ opacity: 1, y: [10, 0, 10] }}
+			transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+		/>
+
+		<motion.img
+			src={vlinder1}
+			alt="vlinder-extra-2"
+			className="vlinder1"
+			style={{ top: "2%", left: "70%" }}
+			initial={{ opacity: 0, x: -15 }}
+			animate={{ opacity: 1, x: [-15, 0, -15] }}
+			transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+		/>
+
+		<motion.img
+			src={vlinder}
+			alt="vlinder-extra-3"
+			className="vlinder"
+			style={{ top: "5%", left: "60%" }}
+			initial={{ opacity: 0, y: -15 }}
+			animate={{ opacity: 1, y: [-15, 0, -15] }}
+			transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
+		/>
+	</>
+)}
+
 
 			{/* Vissen na klik op frog */}
 			{frogClicked && (
 				<>
-					<motion.img
-						src={vis}
-						alt="vis"
-						className="vis"
-						initial={{ opacity: 0, x: -100 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.8, ease: "easeOut" }}
-					/>
+					<motion.img src={vis} alt="vis" className="vis" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} />
 
 					<motion.img
 						src={vis1}
@@ -133,16 +124,10 @@ export default function SceneDrie() {
 			)}
 
 			{/* Stofwolk na vertrek kikker */}
-			{showDust && (
-				<motion.img
-					src={dust}
-					alt="stofwolk"
-					className="dust"
-					initial={{ opacity: 0, scale: 0.5 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.4, ease: "easeOut" }}
-				/>
-			)}
+			{showDust && <motion.img src={dust} alt="stofwolk" className="dust" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, ease: "easeOut" }} />}
+			<StoryBox>
+				<p className="story-text">Na haar ontsnapping komt Duimelijntje in een prachtige vijver terecht, waar de vissen haar nieuwsgierig bekijken en haar helpen om verder te reizen.</p>
+			</StoryBox>
 		</section>
 	);
 }

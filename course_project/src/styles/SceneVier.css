@@ -1,0 +1,71 @@
+.scene-vier-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 450vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	background-color: rgb(0, 0, 0);
+}
+
+.bird {
+	position: absolute;
+	width: 50vw;
+	max-width: 360px;
+	z-index: 3;
+	pointer-events: none;
+}
+
+.bird-1 {
+	bottom: 90%;
+	left: 20%;
+}
+
+.bird-2 {
+	bottom: 85%;
+	right: 25%;
+}
+
+.bird-3 {
+	bottom: 75%;
+	left: 40%;
+}
+
+.boom {
+	position: absolute;
+	bottom: 1300px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 200vh; /* of bijv. 120vh als hij echt groot is */
+	z-index: 1; /* vogels moeten z-index 2 of hoger hebben */
+	pointer-events: none;
+}
+
+.fairy-scenevier {
+	position: absolute;
+	bottom: 0;
+	left: 25%; /* pas aan voor precieze plaatsing */
+	width: 20vw;
+	max-width: 300px;
+	z-index: 2;
+	pointer-events: none;
+	bottom: 1370px;
+	transform: scaleX(-1); /* ⬅️ dit spiegelt de afbeelding horizontaal */
+}
+
+.blauwe-vogel {
+	position: absolute;
+	top: 51%; /* = zelfde visuele plek als bottom: 45% */
+	right: 35%;
+	width: 12vw;
+	max-width: 180px;
+	z-index: 2;
+	pointer-events: auto; /* ✅ zodat onClick werkt */
+}
+
+.liefde-wrapper {
+	margin-top: 360vh; /* schuift onder de boom */
+	z-index: 5;
+	position: relative;
+}

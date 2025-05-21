@@ -12,7 +12,7 @@
 	bottom: 10vh;
 	width: 50vw;
 	user-select: none;
-	pointer-events: all; /* zodat drag events werken */
+	pointer-events: all; 
 }
 
 .lily.back {

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom"; // ✅ Verander dit
 
 import Portal from "./pages/Portal";
 import Duimelijntje from "./pages/Duimelijntje";
@@ -8,7 +8,7 @@ import AboutUs from "./pages/AboutUs";
 
 export default function App() {
 	return (
-		<Router basename="/cp-frontend-MeoKlaklang">
+		<Router> {/* ✅ Geen basename meer nodig */}
 			<Routes>
 				<Route path="/" element={<Portal />} />
 				<Route path="/duimelijntje" element={<Duimelijntje />} />

@@ -28,7 +28,7 @@ export default function Hero() {
 
 	const navigate = useNavigate();
 	const location = useLocation();
-	const id = location.state?.id ?? "1"; // fallback naar id=1 als er niets meegegeven is
+	const id = location.state?.id ?? "1"; 
 
 	return (
 		<div className="hero-wrapper">

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+
 .scene-zes-wrapper {
 	position: relative;
 	width: 100%;
@@ -13,7 +15,6 @@
 	bottom: 15vh;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
 
 .the-end-special {
 	font-family: "Stalemate", cursive;

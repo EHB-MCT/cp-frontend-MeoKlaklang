@@ -1,34 +1,33 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import MiniSprookjeCard from "./MiniSprookjeCard";
 import { SearchContext } from "./SearchContext";
+import { useFetchFairytales } from "../hooks/useFetchFairytales";
 import "../styles/AllStories.css";
 
-export default function AllStories({ dataUrl }) {
-	const [items, setItems] = useState([]);
-	const [loading, setLoading] = useState(true);
+export default function AllStories() {
+	const { fairytales, isLoading } = useFetchFairytales();
 	const { searchTerm, selectedGenre } = useContext(SearchContext);
 
-	useEffect(() => {
-		fetch(dataUrl)
-			.then((res) => res.json())
-			.then((json) => setItems(json))
-			.catch((err) => console.error(err))
-			.finally(() => setLoading(false));
-	}, [dataUrl]);
+	if (isLoading) return <p>Bezig met laden…</p>;
 
-	if (loading) return <p>Bezig met laden…</p>;
-
-	const filteredItems = items.filter((story) => {
-		const matchesSearch = story.title.toLowerCase().includes(searchTerm.toLowerCase());
-		const matchesGenre = selectedGenre ? story.genre.toLowerCase() === selectedGenre.toLowerCase() : true;
+	const filteredItems = fairytales.filter((story) => {
+		const matchesSearch = story.fairytale?.toLowerCase().includes(searchTerm.toLowerCase());
+		const matchesGenre = selectedGenre ? story.genre?.toLowerCase() === selectedGenre.toLowerCase() : true;
 		return matchesSearch && matchesGenre;
 	});
 
 	return (
 		<div className="all-stories">
 			<div className="all-stories-grid">
-				{filteredItems.map((story, index) => (
-					<MiniSprookjeCard key={index} id={story.id} title={story.title} author={story.student} genre={story.genre} image={story.image} />
+				{filteredItems.map((story) => (
+					<MiniSprookjeCard
+						key={story.id}
+						id={story.id}
+						fairytale={story.fairytale}
+						nameStudent={story.nameStudent}
+						genre={story.genre}
+						imgThumbnail={story.imgThumbnail}
+					/>
 				))}
 			</div>
 		</div>

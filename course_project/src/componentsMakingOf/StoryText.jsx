@@ -5,7 +5,7 @@ export default function StoryText({ story, showFullText, toggleShowFullText }) {
 	return (
 		<div className={`story-text ${showFullText ? "full" : ""}`}>
 			<h2>Verhaal</h2>
-			<p dangerouslySetInnerHTML={{ __html: showFullText ? story["full-text"] : story.text }} />
+			<p dangerouslySetInnerHTML={{ __html: showFullText ? story["description"] : story.description }} />
 
 			{showFullText && (
 				<>
@@ -15,7 +15,7 @@ export default function StoryText({ story, showFullText, toggleShowFullText }) {
 			)}
 
 			<h3>Auteur</h3>
-			<p>{story.auteur}</p>
+			<p>{story.nameStudent}</p>
 			<p>{story.genre}</p>
 
 			<button className="lees-meer" onClick={toggleShowFullText}>

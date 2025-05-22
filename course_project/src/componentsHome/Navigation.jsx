@@ -55,18 +55,18 @@ export default function Navigation() {
 
 						<span
 							onClick={() => {
-								fetch(`${import.meta.env.BASE_URL}data.json`)
+								fetch("https://raw.githubusercontent.com/EHB-MCT/cp-frontend-MaximWesterbeek/refs/heads/main/course-project/public/api/fairytaleList.json")
 									.then((res) => res.json())
 									.then((data) => {
 										if (data.length > 0) {
 											const randomIndex = Math.floor(Math.random() * data.length);
 											const randomStory = data[randomIndex];
-											navigate(`/making-Of/${randomStory.id}`);
+											navigate(`/making-of/${randomStory.id}`);
 										}
 									})
 									.catch((err) => console.error("Fout bij ophalen random verhaal:", err));
 							}}
-							className={location.pathname.startsWith("/MakingOf") ? "active clickable" : "clickable"}
+							className={location.pathname.startsWith("/making-of") ? "active clickable" : "clickable"}
 						>
 							MAKING OF
 						</span>

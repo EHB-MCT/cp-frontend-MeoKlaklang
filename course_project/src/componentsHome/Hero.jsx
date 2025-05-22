@@ -30,18 +30,12 @@ export default function Hero() {
 
 	return (
 		<div className="hero-wrapper">
-			<button
-				className="circle-back-button"
-				onClick={() => navigate(`/making-of/${id}`)}
-			>
+			<button className="circle-back-button" onClick={() => navigate(`/making-of/${id}`)}>
 				←
 			</button>
 
 			<section className="hero">
-				<motion.h1
-					style={{ y: titleY, opacity: titleOpacity }}
-					className="title"
-				>
+				<motion.h1 style={{ y: titleY, opacity: titleOpacity }} className="title">
 					Duimelijntje
 				</motion.h1>
 				<img
@@ -56,22 +50,14 @@ export default function Hero() {
 
 			<section className="reveal">
 				<img src={grass} alt="gras" className="grass" />
-				<img
-					src={blink ? fairyCloseEyes : fairyOpen}
-					alt="fee knippert met ogen"
-					className="fairy"
-				/>
+				<img src={blink ? fairyCloseEyes : fairyOpen} alt="fee knippert met ogen" className="fairy" />
 			</section>
 
 			<img src={flower} alt="bloem" className="flower" />
 
-			<motion.div style={{ y: storyY, opacity: storyOpacity }}>
+			<motion.div style={{ y: storyY, opacity: storyOpacity }} className="hero-story-wrapper">
 				<StoryBox>
-					<p className="story-text">
-						Er was eens een klein meisje genaamd Duimelijntje. Ze werd in de
-						gaten gehouden door de padkoning omdat hij een prinses zocht voor
-						zijn zoon.
-					</p>
+					<p className="story-text-secene1">Er was eens een klein meisje genaamd Duimelijntje. Ze werd in de gaten gehouden door de padkoning omdat hij een prinses zocht voor zijn zoon.</p>
 					<span />
 				</StoryBox>
 			</motion.div>

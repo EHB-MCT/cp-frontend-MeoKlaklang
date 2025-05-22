@@ -10,5 +10,22 @@
 
 .the-end-wrapper {
 	position: relative;
-	bottom: 30vh; 
+	bottom: 15vh;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+
+.the-end-special {
+	font-family: "Stalemate", cursive;
+	font-size: 15rem;
+	color: gold;
+	text-align: center;
+	line-height: 1;
+	margin: 0;
+	transition: text-shadow 0.5s ease;
+	letter-spacing: 1rem; /* ✨ voeg dit toe */
+}
+
+.glow {
+	text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffaa00, 0 0 20px #ffcc00;
 }

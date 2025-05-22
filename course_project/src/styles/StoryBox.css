@@ -7,75 +7,73 @@
 	left: 50%;
 	top: 60%;
 	transform: translateX(-50%);
-	/* stel een vaste breedte in */
-	width: 70vw; /* 80% van de viewport-breedte */
-	max-width: 1000px; /* óf maximaal 1200px */
-	/* houd je horizontale padding zoals gewenst */
-	padding: 4rem 9rem 2rem; /* top right/bottom/left */
+	width: 70vw;
+	max-width: 1000px;
+
+	padding: 4rem 9rem 2rem;
 	border: 2px solid gold;
-	z-index: 5; /* zorg dat ‘ie boven je gras/fée staat */
+	z-index: 5;
 }
 
 .storybox p {
 	font-family: "Stoke", serif;
 	font-weight: 400;
 	font-style: normal;
-	color: white; /* maak de tekst wit */
-	font-size: 2rem; /* pas dit aan naar wens */
-	line-height: 1.4; /* mooiere leesafstand */
-	text-indent: 0; /* geen standaard inspringing */
-	margin-top: 4rem; /* of wat voor jou visueel goed voelt */
+	color: white;
+	font-size: 2rem;
+	line-height: 1.4;
+	text-indent: 0;
+	margin-top: 4rem;
 }
 
 .storybox p::first-letter {
-	/* eigen font en kleur voor de E */
 	font-family: "Stalemate", cursive;
-	font-size: 20rem; /* speel met de value tot hij precies goed staat */
+	font-size: 20rem;
 	color: gold;
 	padding-right: 80px;
 	padding-top: 20px;
-	/* float-techniek zodat de rest van de tekst ernaast begint */
 	float: left;
-	line-height: 1; /* zorg dat de drop-cap maar één regel hoog is */
-	margin: 0 1rem 0 0; /* ruimte rechts voor de tekst */
+	line-height: 1;
+	margin: 0 1rem 0 0;
+	transition: text-shadow 0.5s ease;
+	letter-spacing: 1rem; /* ✨ voeg dit toe */
 }
 
-/* vier gouden vierkantjes rondom de box */
+.storybox:hover p::first-letter {
+	text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffaa00, 0 0 20px #ffcc00;
+}
+
 .storybox::before,
 .storybox::after,
 .storybox span::before,
 .storybox span::after {
 	content: "";
 	position: absolute;
-	width: 3rem; /* pas grootte hoekje aan */
+	width: 3rem;
 	height: 3rem;
-	background: transparent; /* geen vulling */
+	background: transparent;
 	box-sizing: border-box;
-	border: 2px solid gold; /* alleen outline */
+	border: 2px solid gold;
 }
 
-/* boven-links: vierkantje buiten de box */
 .storybox::before {
 	top: 0;
 	left: 0;
 	transform: translate(-100%, -100%);
 }
 
-/* boven-rechts */
 .storybox::after {
 	top: 0;
 	right: 0;
 	transform: translate(100%, -100%);
 }
 
-/* onder-links */
 .storybox span::before {
 	bottom: 0;
 	left: 0;
 	transform: translate(-100%, 100%);
 }
 
-/* onder-rechts */
 .storybox span::after {
 	bottom: 0;
 	right: 0;

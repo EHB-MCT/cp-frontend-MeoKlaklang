@@ -1,9 +1,8 @@
-/* FrogLilySection.css */
 .frog-lily-wrapper {
 	position: relative;
 	width: 100%;
 	height: 50vh;
-	overflow: visible; /* 🔄 GEWIJZIGD */
+	overflow: visible;
 }
 
 .lily {
@@ -48,5 +47,5 @@
 }
 
 .frog-lily-page {
-	min-height: 200vh; /* zodat scrollY ver genoeg kan komen */
+	min-height: 200vh; 
 }

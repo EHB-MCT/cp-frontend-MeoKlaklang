@@ -1,6 +1,8 @@
-// src/componentsHome/SceneVijf.jsx
+// SceneVijf.jsx met Parallax van @react-spring/parallax
 import React, { useRef, useState } from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { motion } from "framer-motion";
+
 import blauweVogel from "../assets/BlauweVogel.png";
 import grasMadelijntje from "../assets/gras_madelijntje.png";
 import vlinder2 from "../assets/vlinder2.png";
@@ -13,77 +15,80 @@ import star3 from "../assets/star-3.png";
 import "../styles/SceneVijf.css";
 
 export default function SceneVijf() {
-	const audioRef = useRef(null);
-	const [startFladderen, setStartFladderen] = useState(false);
+  const audioRef = useRef(null);
+  const [startFladderen, setStartFladderen] = useState(false);
 
-	const handleHover = () => {
-		if (audioRef.current && audioRef.current.paused) {
-			audioRef.current.play().catch((err) => {
-				console.error("Geluid kon niet worden afgespeeld:", err);
-			});
-		}
-		setStartFladderen(true);
-	};
+  const handleHover = () => {
+    if (audioRef.current && audioRef.current.paused) {
+      audioRef.current.play().catch((err) => {
+        console.error("Geluid kon niet worden afgespeeld:", err);
+      });
+    }
+    setStartFladderen(true);
+  };
 
-	const fladderAnimatie = {
-		initial: { opacity: 1, y: 0 },
-		animate: startFladderen ? { y: -1000, opacity: 0 } : { y: 0, opacity: 1 },
-		transition: { duration: 4, ease: "easeInOut" },
-	};
+  const fladderAnimatie = {
+    initial: { opacity: 1, y: 0 },
+    animate: startFladderen ? { y: -1000, opacity: 0 } : { y: 0, opacity: 1 },
+    transition: { duration: 4, ease: "easeInOut" },
+  };
 
-	const genPulse = () => ({
-		animate: {
-			scale: [1, 1.2, 1],
-			transition: {
-				duration: Math.random() * 2 + 1.5,
-				repeat: Infinity,
-				ease: "easeInOut",
-				delay: Math.random(),
-			},
-		},
-	});
+  const genPulse = () => ({
+    animate: {
+      scale: [1, 1.2, 1],
+      transition: {
+        duration: Math.random() * 2 + 1.5,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: Math.random(),
+      },
+    },
+  });
 
-	const sterren = [
-		{ src: stip, className: "ster ster-1" },
-		{ src: stip, className: "ster ster-2" },
-		{ src: bigStar, className: "ster ster-3" },
-		{ src: star2, className: "ster ster-4" },
-		{ src: star3, className: "ster ster-5" },
-		{ src: stip, className: "ster ster-6" },
-		{ src: stip, className: "ster ster-7" },
-		{ src: bigStar, className: "ster ster-8" },
-		{ src: star2, className: "ster ster-9" },
-		{ src: star3, className: "ster ster-10" },
-		{ src: stip, className: "ster ster-11" },
-		{ src: stip, className: "ster ster-12" },
-		{ src: bigStar, className: "ster ster-13" },
-		{ src: star2, className: "ster ster-14" },
-		{ src: star3, className: "ster ster-15" },
-		{ src: stip, className: "ster ster-16" },
-		{ src: stip, className: "ster ster-17" },
-		{ src: bigStar, className: "ster ster-18" },
-		{ src: star2, className: "ster ster-19" },
-		{ src: star3, className: "ster ster-20" },
-	];
+  const sterren = [
+    stip, stip, bigStar, star2, star3, stip, stip, bigStar, star2, star3,
+    stip, stip, bigStar, star2, star3, stip, stip, bigStar, star2, star3,
+  ];
 
-	return (
-		<section className="scene-vijf-wrapper" onMouseEnter={handleHover}>
-			<audio ref={audioRef} src={fairySound} preload="auto" />
-			<img src={blauweVogel} alt="blauwe vogel" className="blauwe-vogel-vijf" />
-			<img src={grasMadelijntje} alt="gras met madelijntje" className="gras-madelijntje-vijf" />
+  return (
+    <div className="parallax-wrapper" onMouseEnter={handleHover}>
+      <audio ref={audioRef} src={fairySound} preload="auto" />
+      <Parallax pages={2}>
+        <ParallaxLayer sticky={{ start: 0, end: 1 }}>
+          <div className="sticky-content">
+            <img src={blauweVogel} alt="blauwe vogel" className="blauwe-vogel-vijf" />
+            <img src={grasMadelijntje} alt="gras met madelijntje" className="gras-madelijntje-vijf" />
+          </div>
+        </ParallaxLayer>
 
-			{/* Vlinders met handmatige posities en framer-motion animatie */}
-			<motion.img src={vlinder2} alt="vlinder" className="vlinder-vijf vlinder-1" {...fladderAnimatie} />
-			<motion.img src={vlinder2} alt="vlinder" className="vlinder-vijf vlinder-2" {...fladderAnimatie} />
-			<motion.img src={vlinder2} alt="vlinder" className="vlinder-vijf vlinder-3" {...fladderAnimatie} />
-			<motion.img src={vlinder2} alt="vlinder" className="vlinder-vijf vlinder-4" {...fladderAnimatie} />
-			<motion.img src={vlinder2} alt="vlinder" className="vlinder-vijf vlinder-5" {...fladderAnimatie} />
-			<motion.img src={vlinder2} alt="vlinder" className="vlinder-vijf vlinder-6" {...fladderAnimatie} />
+        <ParallaxLayer offset={0.5} speed={1}>
+          <>
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <motion.img
+                key={i}
+                src={vlinder2}
+                alt={`vlinder ${i}`}
+                className={`vlinder-vijf vlinder-${i}`}
+                {...fladderAnimatie}
+              />
+            ))}
+          </>
+        </ParallaxLayer>
 
-			{/* Sterren met willekeurige pulsatie */}
-			{sterren.map((ster, index) => (
-				<motion.img key={index} src={ster.src} alt={`ster ${index + 1}`} className={ster.className} {...genPulse()} />
-			))}
-		</section>
-	);
+        <ParallaxLayer offset={1} speed={1.5}>
+          <>
+            {sterren.map((src, index) => (
+              <motion.img
+                key={index}
+                src={src}
+                alt={`ster ${index + 1}`}
+                className={`ster ster-${index + 1}`}
+                {...genPulse()}
+              />
+            ))}
+          </>
+        </ParallaxLayer>
+      </Parallax>
+    </div>
+  );
 }

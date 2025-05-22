@@ -11,6 +11,7 @@
 		"deploy": "vite build && gh-pages -d dist"
 	},
 	"dependencies": {
+		"@react-spring/parallax": "^10.0.1",
 		"bootstrap": "^5.3.6",
 		"framer-motion": "^12.9.2",
 		"i18next": "^25.0.2",

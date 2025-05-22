@@ -49,7 +49,7 @@ export default function FrogLilySection() {
 
 			<motion.div style={{ y: storyY, opacity: storyOpacity }} className="story-container">
 				<StoryBox>
-					<p className="story-text">De pad prins ontvoerd duimelijntje en laat haar alleen op een lelie blad. Maar gelukkig wordt ze geholpen door een vlinders en vissen! </p>
+					<p className="story-text-scene2">De pad prins ontvoerd duimelijntje en laat haar alleen op een lelie blad. Maar gelukkig wordt ze geholpen door een vlinders en vissen! </p>
 					<span />
 				</StoryBox>
 			</motion.div>

@@ -30,7 +30,7 @@ export default function Hero() {
 
 	return (
 		<div className="hero-wrapper">
-			<button className="circle-back-button" onClick={() => navigate(`/making-of/${id}`)}>
+			<button className="circle-back-button" onClick={() => navigate("/")}>
 				←
 			</button>
 

@@ -47,7 +47,7 @@ export default function MakingOf() {
 
 					{!showFullText && (
 						<StoryImage
-							image={story.imgsExtra?.[0]} // Eerste afbeelding als preview
+							image={story.imgsExtra?.[0]} 
 							fairytaleLink={story.fairytaleLink}
 							id={story.id}
 						/>

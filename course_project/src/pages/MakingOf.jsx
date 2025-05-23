@@ -38,7 +38,7 @@ export default function MakingOf() {
 			<Navigation />
 
 			<div className="making-of-wrapper">
-				<h1 className="banner-title">Making Of</h1>
+				<h1 className="banner-title-h1">Making Of</h1>
 
 				<Banner foto={story.imgBanner} title={story.fairytale} student={story.nameStudent} />
 

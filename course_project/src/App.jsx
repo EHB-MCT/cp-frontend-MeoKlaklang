@@ -8,7 +8,7 @@ import AboutUs from "./pages/AboutUs";
 
 export default function App() {
 	return (
-		<Router> {/* ✅ Geen basename meer nodig */}
+		<Router> 
 			<Routes>
 				<Route path="/" element={<Portal />} />
 				<Route path="/duimelijntje" element={<Duimelijntje />} />

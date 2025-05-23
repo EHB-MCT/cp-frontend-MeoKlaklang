@@ -1,9 +1,9 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	position: relative;
 }
 
 .logo {
@@ -30,7 +30,7 @@
 
 .nav-right a:hover,
 .nav-right a.active {
-	color: #000; /* zwarte kleur voor actieve link */
+	color: #000;
 	font-weight: bold;
 }
 
@@ -91,8 +91,17 @@
 	cursor: pointer;
 }
 
-
 .dropdown-item:hover {
 	color: #d00000;
 }
 
+.clickable {
+	color: #999;
+	transition: color 0.2s ease;
+}
+
+.clickable:hover,
+.clickable.active {
+	color: #000; 
+	font-weight: bold;
+}

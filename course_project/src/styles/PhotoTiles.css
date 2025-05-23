@@ -14,9 +14,8 @@
   transition: transform 0.2s ease;
 }
 
-/* Vorm-klassen */
 .rounded-full {
-  border-radius: 50%;
+  border-radius: 0 30% 0 0;
 }
 
 .rounded-top-left {

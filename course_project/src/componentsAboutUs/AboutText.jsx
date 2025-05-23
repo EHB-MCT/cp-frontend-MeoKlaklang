@@ -17,7 +17,7 @@ export default function AboutText() {
 				sprookjeswereld tot leven te brengen.
 			</p>
 
-			<Link to="/making-of" className="about-button">
+			<Link to="/" className="about-button">
 				Bekijk alle sprookjes
 			</Link>
 		</div>

@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
 .making-of-wrapper {
 	max-width: 1100px;
 	margin: 0 auto;
+}
+
+.banner-title-h1 {
+	font-family: "Bungee", sans-serif;
+	color: #e51131;
+	padding-bottom: 10px;
 }
 
 .making-of-header {
@@ -45,13 +53,13 @@
 .banner-content {
 	background: #f0f8f2;
 	padding: 1rem 1.5rem;
-	width: 230px;
+	width: 260px;
 }
 
 .banner-title {
 	font-size: 2rem;
 	font-weight: bold;
-	color: #d00000;
+	color: #e51131;
 	margin: 0;
 }
 
@@ -115,12 +123,12 @@
 .extra-info {
 	margin-top: 4rem;
 	padding: 0 1rem;
-	text-align: left; /* <== belangrijk */
+	text-align: left; 
 }
 
 .extra-title {
-	color: #d00000;
-	font-weight: bold;
+	color: #e51131;
+	font-family: "Bungee", sans-serif;
 	font-size: 1.5rem;
 	text-transform: uppercase;
 	margin-bottom: 1.5rem;
@@ -129,7 +137,7 @@
 
 .extra-images {
 	display: flex;
-	justify-content: flex-start; /* <== links uitlijnen */
+	justify-content: flex-start; 
 	gap: 5rem;
 	flex-wrap: wrap;
 	margin-bottom: 1rem;
@@ -170,5 +178,3 @@
 	opacity: 0.6;
 	color: red;
 }
-
-

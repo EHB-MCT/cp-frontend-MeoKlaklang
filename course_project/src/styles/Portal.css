@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
 .portal {
 	padding: 2rem;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	min-height: 100vh;
-
 }
 
 .wrapper {
@@ -14,18 +15,20 @@
 .portal-title {
 	text-align: left;
 	font-size: 2rem;
-	margin-bottom: 2rem;
 	color: #e51131;
 	margin-left: 140px;
+	font-family: "Bungee", sans-serif;
 }
 
 .portal-title2 {
+	padding-top: 1rem;
 	text-align: left;
 	font-size: 2rem;
 	margin-bottom: 2rem;
 	color: #e51131;
 	margin-left: 140px;
 	margin-top: 40px;
+	font-family: "Bungee", sans-serif;
 }
 
 .card-grid {
@@ -50,20 +53,20 @@
 	align-items: flex-start;
 }
 .card-link {
-	margin-top: auto; /* duwt de pijl naar onder */
-	align-self: flex-end; /* rechts uitlijnen */
+	margin-top: auto;
+	align-self: flex-end;
 	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
 .card-link svg {
-	color: #666666; /* lichtgrijs */
-	width: 2rem; /* gewenste breedte */
-	height: 2rem; /* gewenste hoogte */
+	color: #666666;
+	width: 2rem;
+	height: 2rem;
 }
 
 .card-link svg:hover {
-	color: #e51131; /* iets donkerder op hover */
+	color: #e51131;
 }
 .card:hover {
 	transform: scale(1.05);
@@ -89,9 +92,9 @@
 }
 
 .card img {
-	width: 100%; /* vult de breedte van de kaart */
-	height: 260px; /* vaste hoogte voor alle afbeeldingen */
-	object-fit: cover; /* bijsnijden om te vullen zonder vervorming */
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
 	border-radius: 12px;
 	margin-bottom: 0.5rem;
 }

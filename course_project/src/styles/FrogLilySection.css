@@ -49,3 +49,23 @@
 .frog-lily-page {
 	min-height: 200vh; 
 }
+
+.lily-hint {
+	position: absolute;
+	bottom: 230%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(131, 125, 125, 0.5);
+	font-size: 1rem;
+	font-style: italic;
+	z-index: 10;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	transition: opacity 0.4s ease;
+	pointer-events: none;
+}
+
+.lily-hint.hidden {
+	opacity: 0;
+
+}

@@ -22,7 +22,6 @@ export default function MakingOf() {
 			const selected = fairytales.find((item) => item.id === id);
 			setStory(selected);
 
-			// views tellen
 			if (selected) {
 				const views = JSON.parse(localStorage.getItem("views")) || {};
 				views[selected.id] = (views[selected.id] || 0) + 1;
@@ -45,13 +44,7 @@ export default function MakingOf() {
 				<div className="story-content">
 					<StoryText story={story} showFullText={showFullText} toggleShowFullText={() => setShowFullText(!showFullText)} />
 
-					{!showFullText && (
-						<StoryImage
-							image={story.imgsExtra?.[0]} 
-							fairytaleLink={story.fairytaleLink}
-							id={story.id}
-						/>
-					)}
+					{!showFullText && <StoryImage image={story.imgThumbnail} fairytaleLink={story.fairytaleLink} id={story.id} />}
 				</div>
 
 				<ExtraInfo story={story} />

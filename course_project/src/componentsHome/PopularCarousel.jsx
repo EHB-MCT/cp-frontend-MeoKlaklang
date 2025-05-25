@@ -19,7 +19,7 @@ export default function PopularCarousel({ visibleCount = 2 }) {
 					views: views[item.id] || 0,
 				}))
 				.sort((a, b) => b.views - a.views)
-				.slice(0, 10); // Top 10
+				.slice(0, 10); 
 
 			setSortedItems(sorted);
 		}

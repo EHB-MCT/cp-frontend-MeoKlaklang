@@ -17,7 +17,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Hero() {
 	const blink = useBlink(3000, 200);
-	const offset = useMouseOffset(30);
+	const offset = useMouseOffset(50);
 	const { scrollY } = useViewportScroll();
 	const titleY = useTransform(scrollY, [0, 400], [0, -80]);
 	const titleOpacity = useTransform(scrollY, [0, 400], [1, 0]);
@@ -25,8 +25,6 @@ export default function Hero() {
 	const storyOpacity = useTransform(scrollY, [1200, 1300], [0, 1]);
 
 	const navigate = useNavigate();
-	const location = useLocation();
-	const id = location.state?.id ?? "1";
 
 	return (
 		<div className="hero-wrapper">

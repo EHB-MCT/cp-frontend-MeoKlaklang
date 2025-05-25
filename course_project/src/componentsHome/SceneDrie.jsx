@@ -33,8 +33,8 @@ export default function SceneDrie() {
 	return (
 		<section className="scene-drie-wrapper">
 			<img src={lelie3} alt="gele lelie" className="lelie3" />
+			<span className="frog-hint">Klik op de kikker en hover of duimelijntje!</span>
 
-			{/* Frog die wegvliegt */}
 			<motion.img
 				src={frog2}
 				alt="kikker met hoed"
@@ -44,12 +44,10 @@ export default function SceneDrie() {
 				transition={{ duration: 1, ease: "easeInOut" }}
 			/>
 
-			{/* Fairy met hover-vlinders */}
 			<img src={fairy} alt="vleugelmeisje" className="fairy-scene-drie" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} />
 
 			{hovered && (
 				<>
-					{/* Originele twee */}
 					<motion.img
 						src={vlinder}
 						alt="vlinder"

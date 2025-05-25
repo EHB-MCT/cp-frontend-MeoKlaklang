@@ -23,6 +23,8 @@ export default function FrogLilySection() {
 	return (
 		<div className="frog-lily-page">
 			<section className="frog-lily-wrapper" ref={constraintsRef}>
+				<span className="lily-hint">Verwijder het lelieblaadje</span>
+
 				<motion.img src={lily2} alt="lelieblad achter" className="lily back" drag dragConstraints={constraintsRef} dragMomentum={false} dragElastic={0.1} />
 
 				<img src={frog} alt="kikker" className="frog" />

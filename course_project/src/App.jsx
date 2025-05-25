@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom"; // ✅ Verander dit
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Portal from "./pages/Portal";
 import Duimelijntje from "./pages/Duimelijntje";

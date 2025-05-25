@@ -1,5 +1,3 @@
-/* src/styles/SceneDrie.css */
-
 .scene-drie-wrapper {
 	position: relative;
 	width: 100%;
@@ -7,12 +5,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: visible; /* Laat beelden buiten het kader tonen indien nodig */
+	overflow: visible;
 }
 
 .lelie3 {
 	position: absolute;
-	width: 90vw; /* Groter dan voorheen */
+	width: 90vw;
 	max-width: 1000px;
 	z-index: 1;
 	bottom: 65%;
@@ -22,7 +20,7 @@
 	position: absolute;
 	left: 26%;
 	bottom: 75%;
-	width: 30vw; /* Groter */
+	width: 30vw;
 	max-width: 600px;
 	z-index: 2;
 	transform: scaleX(-1);
@@ -32,7 +30,7 @@
 	position: absolute;
 	right: 20%;
 	bottom: 80%;
-	width: 28vw; /* Groter */
+	width: 28vw;
 	max-width: 400px;
 	z-index: 2;
 }
@@ -46,16 +44,13 @@
 	pointer-events: none;
 }
 
-
-
-
 .vlinders-wrapper {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	pointer-events: none; /* zodat hover op fairy of vlinders nog steeds geldt */
+	pointer-events: none;
 }
 
 .vis,
@@ -84,4 +79,23 @@
 	max-width: 100px;
 	z-index: 4;
 	pointer-events: none;
+}
+
+.frog-hint {
+	position: absolute;
+	bottom: 116%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(131, 125, 125, 0.5);
+	font-size: 1rem;
+	font-style: italic;
+	z-index: 10;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	transition: opacity 0.4s ease;
+	pointer-events: none;
+}
+
+.frog-hint.hidden {
+	opacity: 0;
 }

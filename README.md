@@ -29,3 +29,5 @@ gebruik van use param om een id-gedeelte op te halen; https://api.reactrouter.co
 audio laten afspelen tijdens een interactie; https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement 
 
 de gouden lijn scroll; https://framermotionexamples.com/examples?s=scroll_linked-page_scroll 
+
+issue met de window location voor de fairytale link; https://www.w3schools.com/js/js_window_location.asp 

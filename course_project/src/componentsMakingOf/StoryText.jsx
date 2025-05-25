@@ -1,4 +1,3 @@
-// componentsMakingOf/StoryText.jsx
 import React from "react";
 
 export default function StoryText({ story, showFullText, toggleShowFullText }) {
@@ -10,12 +9,12 @@ export default function StoryText({ story, showFullText, toggleShowFullText }) {
 			{showFullText && (
 				<>
 					<h3>Parallax effect</h3>
-					<p dangerouslySetInnerHTML={{ __html: story["parallax-text"] }} />
+					<p dangerouslySetInnerHTML={{ __html: story.parallaxInfo }} />
 				</>
 			)}
 
 			<h3>Auteur</h3>
-			<p>{story.nameStudent}</p>
+			<p>{story.fairytaleAuthor}</p>
 			<p>{story.genre}</p>
 
 			<button className="lees-meer" onClick={toggleShowFullText}>

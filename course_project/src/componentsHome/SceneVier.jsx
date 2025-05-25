@@ -49,27 +49,17 @@ export default function SceneVier() {
 
 			<img src={boom} alt="boom" className="boom" />
 
-			{/* Scrollvolgende vogels */}
 			<motion.img src={bird1} alt="vogel 1" className="bird bird-1" style={{ y: scrollOffset }} />
 			<motion.img src={bird2} alt="vogel 2" className="bird bird-2" style={{ y: scrollOffset }} />
 			<motion.img src={bird3} alt="vogel 3" className="bird bird-3" style={{ y: scrollOffset }} />
 
 			<img src={fairy} alt="fee" className="fairy-scenevier" />
 
-			<motion.img
-				src={blauweVogel}
-				alt="blauwe vogel"
-				className="blauwe-vogel"
-				onClick={() => setVogelGevallen(true)}
-				animate={{ y: vogelGevallen ? 430 : 0 }}
-				transition={{ type: "spring", stiffness: 100 }}
-			/>
+			<motion.img src={blauweVogel} alt="blauwe vogel" className="blauwe-vogel" onClick={() => setVogelGevallen(true)} animate={{ y: vogelGevallen ? 430 : 0 }} transition={{ type: "spring", stiffness: 100 }} />
 
 			<div className="liefde-wrapper">
 				<StoryBox>
-					<p className="story-text-4">
-						De zwaluw wordt smoorverliefd op Duimelijntje en vraagt of ze mee wilt gaan naar het zuiden met hem.
-					</p>
+					<p className="story-text-4">De zwaluw wordt smoorverliefd op Duimelijntje en vraagt of ze mee wilt gaan naar het zuiden met hem.</p>
 				</StoryBox>
 			</div>
 		</section>

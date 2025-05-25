@@ -31,3 +31,6 @@ audio laten afspelen tijdens een interactie; https://developer.mozilla.org/en-US
 de gouden lijn scroll; https://framermotionexamples.com/examples?s=scroll_linked-page_scroll 
 
 issue met de window location voor de fairytale link; https://www.w3schools.com/js/js_window_location.asp 
+
+bird frog sound; https://freesound.org/ 
+sparkling sound; https://www.youtube.com/watch?v=uV0UG0cwGGs
